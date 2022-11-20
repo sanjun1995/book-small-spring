@@ -50,7 +50,8 @@ public class ApiTest {
     @Test
     public void test_newInstance() throws IllegalAccessException, InstantiationException {
         UserService userService = UserService.class.newInstance();
-        System.out.println(userService);
+        userService.setName("小傅哥");
+        userService.queryUserInfo();
     }
 
     @Test
@@ -67,7 +68,7 @@ public class ApiTest {
         Constructor<?>[] declaredConstructors = beanClass.getDeclaredConstructors();
         Constructor<?> constructor = declaredConstructors[0];
         Constructor<UserService> declaredConstructor = beanClass.getDeclaredConstructor(constructor.getParameterTypes());
-        UserService userService = declaredConstructor.newInstance("小傅哥");
+        UserService userService = declaredConstructor.newInstance("小副歌");
         System.out.println(userService);
     }
 
